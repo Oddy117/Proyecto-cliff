@@ -1,0 +1,140 @@
+/*inicio de body general*/
+/*----------------------*/
+body, p, ul{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+/*--------------------*/
+/*fin de body general*/
+
+
+/*inicio de header*/
+/*--------------------*/
+.fondo-header {
+    background-image: url(Imagenes/portada.jpg);
+    background-size: cover;
+    background-position: 75% 70%; /*o center para posicionar al centro*/
+    padding: 0px 0px 80px 0px;
+    position: relative; /*relative = referencia*/
+}
+
+.fondo-header::before{
+    content: "";
+    position: absolute; /*usa esa referencia para colocarse*/
+    background-color: rgba(0, 0, 0, .2);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+h1{
+    font-family: "Yuyu Short", sans-serif;
+    font-size: 120px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+    position: relative;
+}
+
+.eslogan p{
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    color: #E9E5D6;
+    text-shadow: -2px -2px #1d1d1d;
+    position: relative;
+}
+/*--------------------*/
+/*fin de header*/
+
+
+/*inicio secciones*/
+/*--------------------*/
+section{
+    padding: 40px 0px;/*dos valores (arriba abajo - izquierda derecha)*/
+}
+
+
+/*inicio section 1*/
+/*--------------------*/
+section.section-1 h2{
+    background-color: #3F4A4F;
+    color: #FAEDCD;
+    margin-bottom: 30px; 
+}
+/*--------------------*/
+/*fin de secction1*/
+
+
+/*inicio section 2*/
+/*--------------------*/
+section.section-2 h2{
+    background-color: #3A5A40;
+    color: #FAEDCD;
+    margin-bottom: 30px;
+}
+
+.li-encontraras{
+    list-style: none;
+}
+
+.li-encontraras, li{
+    margin: 15px 0px;
+}
+/*--------------------*/
+/*fin de secction2*/
+
+
+/*inicio section 3*/
+/*--------------------*/
+section.section-3 h2{
+    background-color: #8B5E34;
+    color: #FAEDCD;
+    margin-bottom: 30px;
+}
+.inicio-sesion{
+    padding: 0% 0% 0% 0%;
+    margin: 0% 60% 0% 0%;
+    border: solid;
+}
+
+.boton-de-inicio{
+    background-color: #3A5A40;
+    color: #FAEDCD;
+    margin-left: 0%;
+}
+
+.boton-de-inicio:hover{
+    background-color: #4F772D;
+}
+
+.boton-de-cierre{
+    margin-left: 40px;
+    background-color: #8B5E34;
+    color: #FAEDCD;
+}
+
+.boton-de-cierre:hover{
+    background-color: #A47148;
+}
+/*--------------------*/
+/*fin de secction3*/
+
+
+/*--------------------*/
+/*fin de secciones*/
+
+
+
+
+
+
+/*inicio footer*/
+/*--------------------*/
+footer{
+    border-top: dotted;
+}
+/*--------------------*/
+/*fin de footer*/
