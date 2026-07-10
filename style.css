@@ -15,7 +15,7 @@ body, p, ul{
     background-image: url(Imagenes/portada.jpg);
     background-size: cover;
     background-position: 75% 70%; /*o center para posicionar al centro*/
-    padding: 0px 0px 80px 0px;
+    padding: 0px;
     position: relative; /*relative = referencia*/
 }
 
@@ -53,24 +53,26 @@ h1{
 /*inicio secciones*/
 /*--------------------*/
 section{
-    padding: 40px 0px;/*dos valores (arriba abajo - izquierda derecha)*/
+    padding: 0px 0px 20px 0px;
+    margin: 0px 0px 20px 0px;/*dos valores (arriba abajo - izquierda derecha)*/
 }
 
 
 /*inicio section 1*/
 /*--------------------*/
-section.section-1 h2{
+.section-1 h2{
     background-color: #3F4A4F;
     color: #FAEDCD;
-    margin-bottom: 30px; 
+    margin: 0px 0px 20px 0px; 
 }
+
 /*--------------------*/
 /*fin de secction1*/
 
 
 /*inicio section 2*/
 /*--------------------*/
-section.section-2 h2{
+.section-2 h2{
     background-color: #3A5A40;
     color: #FAEDCD;
     margin-bottom: 30px;
@@ -89,14 +91,16 @@ section.section-2 h2{
 
 /*inicio section 3*/
 /*--------------------*/
-section.section-3 h2{
+.section-3 h2{
     background-color: #8B5E34;
     color: #FAEDCD;
     margin-bottom: 30px;
 }
+
 .inicio-sesion{
-    padding: 0% 0% 0% 0%;
-    margin: 0% 60% 0% 0%;
+    justify-content: center;
+    max-width: 400px;
+    width: 100%;
     border: solid;
 }
 
