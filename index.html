@@ -24,7 +24,7 @@
         <h1>Proyecto Cliff</h1>
         <div class="eslogan">
             <p>Descubre la montaña.</p>
-            <p>Explora rutas.</p>
+            <p>Explora las rutas.</p>
             <p>Vive la aventura.</p>
         </div>
     </header>
@@ -37,20 +37,22 @@
         <section class="section-2">
             <h2>¿Que encontraras?</h2>
             <ul class="li-encontraras">
-                <li><a href="https://www.google.com/search?q=senderismo" target="_blank">🥾  Senderismo</a></li>
+                <li><a href="https://www.google.com/search?q=senderismo" target="_blank">🥾 Senderismo</a></li>
 
-                <li><a href="https://www.google.com/search?q=escalada" target="_blank">🧗  Escalada</a></li>
+                <li><a href="https://www.google.com/search?q=escalada" target="_blank">🧗 Escalada</a></li>
 
-                <li><a href="https://www.google.com/search?q=altamontana" target="_blank">🏔️  Alta montaña</a></li>
+                <li><a href="https://www.google.com/search?q=altamontana" target="_blank">🏔️ Alta montaña</a></li>
 
                 <li><a href="https://www.google.com/search?q=fotografiamontana" target="_blank">📸  Fotografia de montaña</a></li>
-                <li><a href="https://www.google.com/search?q=camping" target="_blank">🏕️  Camping</a></li>
+                <li><a href="https://www.google.com/search?q=camping" target="_blank">🏕️ Camping</a></li>
             </ul>
 
         </section>
         
         <section class="section-3">
-            <h2>¿Conoces alguna ruta? compartela abajo.</h2>
+            <h2>🏔️ Comparte tu experiencia en la montaña</h2>
+            
+            <div class="usuarios">
             <form class="inicio-sesion">
                 <p>Inicia sesion:</p>
                 <div>
@@ -71,28 +73,68 @@
 
                 <button id="boton-inicio-sesion" class="boton-de-inicio" type="button">Iniciar Sesion</button>
                 <button id="boton-cierre-sesion" class="boton-de-cierre" type="button">Cerrar sesion</button>
+                <p id="icono_de_sesion">🔴 Sesion no iniciada</p>
             </form>
-            <br>
+            
+            
+            
+            <form class="registrar-usuario">
+                <p>Registrar nuevo usuario</p>
+                <div>
+                    <label>Nuevo usuario: </label>
+                    <input
+                        id="nuevo-usuario"
+                        type="text"
+                    >
 
+                </div>
+
+                <div>
+                    <label>Nueva contraseña: </label>
+                    <input
+                        id="nueva-contraseña"
+                        type="password"
+                    >
+                </div>
+                <button id="boton-de-registro" class="boton-de-registro" type="button">Registrar</button>
+                <p id="icono_usuario_registrado"></p>
+            </form>
+            </div>
+            
             <form class="comparte-tu-ruta">
                 <div>
-                    <label for="tu-ruta">Comparte tu ruta</label>
+                    <label for="nombre-de-la-ruta">Comparte tu ruta:</label>
                     <input 
-                        id="tu-ruta" 
+                        id="nombre-de-la-ruta" 
                         type="text" 
-                        placeholder="Ingresa tu ruta"
+                        placeholder="Ingresa el nombre de la ruta"
                     >
-                    <button id="boton-ruta" type="button">Enviar</button>
+                    <label for="la-hora">Comparte el tiempo de recorrido total:</label>
+                    <input
+                        id="la-hora"
+                        type="number"
+                        placeholder="Timepo de recorrido"
+                    >
+                    <label for="experiencia" class="experiencia"><p>Comparte tus experiencias y consejos:</p></label>
+                    <textarea 
+                        id="experiencia"
+                        rows="7"
+                        cols="50"
+                        placeholder="Comparte tu experiencia con otros senderistas"></textarea>
+                    <button id="boton-ruta" type="button">Compartir 😆</button>
                 </div>
 
                 <p id="inicie-sesion"></p>
             
-            </form>
+            </form>           
+        </section>
 
-            <ul id="lista-de-rutas"> 
+
+
+        <h2>Experiencias y Consejos</h2>
+        <section id="lista-de-rutas" class="lista-de-rutas">
             
-            </ul>
-            
+        
         </section>
 
     </main>

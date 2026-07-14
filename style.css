@@ -1,5 +1,8 @@
 /*inicio de body general*/
 /*----------------------*/
+body{
+    background-color: #fbf2dc;
+}
 body, p, ul{
     margin: 0;
     padding: 0;
@@ -35,16 +38,30 @@ h1{
     margin: 0px 0px 0px 0px;
     padding: 0px;
     position: relative;
+    color: #FAEDCD;
+    text-align: center;
+    text-shadow: -3px -3px #1d1d1d;
 }
 
 .eslogan p{
     font-size: 20px;
-    padding: 0;
-    margin: 0;
     font-weight: bold;
     color: #E9E5D6;
-    text-shadow: -2px -2px #1d1d1d;
+    text-shadow: -3px -3px #1d1d1d;
     position: relative;
+    margin: 0 auto;
+    
+}
+
+.eslogan{
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    gap: 20px; /*espacio para los hijos de flex*/
+    white-space: nowrap; /*sin renglones*/
 }
 /*--------------------*/
 /*fin de header*/
@@ -78,12 +95,21 @@ section{
     margin-bottom: 30px;
 }
 
-.li-encontraras{
-    list-style: none;
+.li-encontraras a{
+    text-decoration: none;
 }
 
 .li-encontraras, li{
-    margin: 15px 0px;
+    list-style-type: none;
+    white-space: nowrap;
+    margin: 0 50px;
+}
+
+.li-encontraras{
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /*Como amodar los hijos*/
+    gap: 20px;
 }
 /*--------------------*/
 /*fin de secction2*/
@@ -97,17 +123,40 @@ section{
     margin-bottom: 30px;
 }
 
+.usuarios{ /* flex acomoda los hijos directos del contenedor */
+    display: flex; /*quiero controlar cómo acomodas a mis hijos directos*/
+    flex-direction: row; /*en qué direccion debe acomodar a esos hijos*/
+}
+
 .inicio-sesion{
-    justify-content: center;
-    max-width: 400px;
+    max-width: 300px;
     width: 100%;
     border: solid;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.registrar-usuario{
+    max-width: 300px;
+    width: 100%;
+    border: solid;
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 20PX;
+}
+
+.boton-de-registro{
+    background-color: #4A6FA5;
+    color: #FAEDCD;
+}
+
+.boton-de-registro:hover{
+    background-color: #2F6F73;
 }
 
 .boton-de-inicio{
     background-color: #3A5A40;
     color: #FAEDCD;
-    margin-left: 0%;
 }
 
 .boton-de-inicio:hover{
@@ -115,13 +164,32 @@ section{
 }
 
 .boton-de-cierre{
-    margin-left: 40px;
     background-color: #8B5E34;
     color: #FAEDCD;
 }
 
 .boton-de-cierre:hover{
     background-color: #A47148;
+}
+
+.lista-de-rutas{
+    border: solid;
+    max-width: 400px;
+    width: 100%;
+    margin-top: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+}
+
+article{
+    border: 2px dotted;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    font-size: 20px;
+    resize: none;
+
 }
 /*--------------------*/
 /*fin de secction3*/
