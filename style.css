@@ -8,7 +8,7 @@
 body{
     background-color: #fbf2dc;
     font-size: 22px;
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
 }
 body, p, ul{
     margin: 0;
