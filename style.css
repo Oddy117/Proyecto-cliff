@@ -1,26 +1,4 @@
-@media (max-width: 600px){
 
-    .eslogan{
-        flex-direction: column;
-        white-space: normal;
-        gap: 5px;
-    }
-
-    .li-encontraras{
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .li-encontraras li{
-        white-space: normal;
-    }
-
-    .usuarios{
-        flex-direction: column;
-    }
-
-}
 /*inicio de body general*/
 /*----------------------*/
 *{
@@ -243,3 +221,27 @@ footer{
 }
 /*--------------------*/
 /*fin de footer*/
+
+@media (max-width: 600px){ /*el media va hasta abajo por la cascada*/
+
+    .eslogan{
+        flex-direction: column;
+        white-space: normal;
+        gap: 5px;
+    }
+
+    .li-encontraras{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .li-encontraras li{
+        white-space: normal;
+    }
+
+    .usuarios{
+        flex-direction: column;
+    }
+
+} 
