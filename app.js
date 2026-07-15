@@ -1,54 +1,47 @@
 //variables java
 const usuarios = [
     {
-        usuario: "hugo",
+        usuario: "admin",
         contrasena: "123"
-    },
-    {
-        usuario: "choom",
-        contrasena: "123"
-    },
-    {
-        usuario: "chato",
-        contrasena: "nightcity"
     }
 ]
 const rutas = []
 let sesionOk = false
 let usuarioActual = ""
+
 //variables de vienen del hmtl
 //Inicio de sesion
-let usuariohtml = document.getElementById("usuario")
-let contrasenahtml = document.getElementById("contrasena")
-let iconoSesion = document.getElementById("icono_de_sesion")
+const usuarioHtml = document.getElementById("usuario")
+const contrasenaHtml = document.getElementById("contrasena")
+const iconoSesion = document.getElementById("icono_de_sesion")
 
 //Registro nuevo usuario
-let nuevoUsuario = document.getElementById("nuevo-usuario")
-let nuevaContraseña = document.getElementById("nueva-contraseña")
-let iconoUsuarioRegistrado = document.getElementById("icono_usuario_registrado")
+const nuevoUsuario = document.getElementById("nuevo-usuario")
+const nuevaContraseña = document.getElementById("nueva-contraseña")
+const iconoUsuarioRegistrado = document.getElementById("icono_usuario_registrado")
 
 //ingreso de datos de ruta
-let ruta = document.getElementById("nombre-de-la-ruta")
-let hora = document.getElementById("la-hora")
-let experiencia = document.getElementById("experiencia")
+const ruta = document.getElementById("nombre-de-la-ruta")
+const hora = document.getElementById("la-hora")
+const experiencia = document.getElementById("experiencia")
 
 //botones
-let botonInicio = document.getElementById("boton-inicio-sesion")
-let botonCierre = document.getElementById("boton-cierre-sesion")
-let botonRutas = document.getElementById("boton-ruta")
-let botonregistro = document.getElementById("boton-de-registro")
+const botonInicio = document.getElementById("boton-inicio-sesion")
+const botonCierre = document.getElementById("boton-cierre-sesion")
+const botonRutas = document.getElementById("boton-ruta")
+const botonRegistro = document.getElementById("boton-de-registro")
 
 //parrafos
-let confirmacionInicio = document.getElementById("inicie-sesion")
+const confirmacionInicio = document.getElementById("inicie-sesion")
 
 //listas
-let articulo = document.getElementById("lista-de-rutas")
+const articulo = document.getElementById("lista-de-rutas")
 
 //escucha botones
 botonInicio.addEventListener("click", sesionIniciada)
 botonRutas.addEventListener("click", agregarRuta)
 botonCierre.addEventListener("click",sesionCerrada)
-botonregistro.addEventListener("click",registrarUsuario)
+botonRegistro.addEventListener("click",registrarUsuario)
 
 
 function registrarUsuario(){
@@ -60,31 +53,36 @@ function registrarUsuario(){
         }
     }
     if(permiso && nuevoUsuario.value && nuevaContraseña.value){
-        usuarios.push({usuario: nuevoUsuario.value, contrasena: nuevaContraseña.value})
+        usuarios.push({
+            usuario: nuevoUsuario.value,
+            contrasena: nuevaContraseña.value
+        })
         nuevoUsuario.value = ""
         nuevaContraseña.value = ""
-        iconoUsuarioRegistrado.innerHTML = "🟢 Usuario registrado con exito"
+        iconoUsuarioRegistrado.textContent = "🟢 Usuario registrado con exito"
     }
-    else if(nuevoUsuario.value === "" || nuevaContraseña.value === ""){
-        iconoUsuarioRegistrado.innerHTML = "🟡 Falta usuario o contraseña"
+    else if(!nuevoUsuario.value || !nuevaContraseña.value){
+        iconoUsuarioRegistrado.textContent = "🟡 Falta usuario o contraseña"
     }
     else{
         nuevoUsuario.value = ""
         nuevaContraseña.value = ""
-        iconoUsuarioRegistrado.innerHTML = "🔴 Usuario no disponible"
+        iconoUsuarioRegistrado.textContent = "🔴 Usuario no disponible"
     }    
 }
 
 //Nota temporal NO olvidar el .value que es = al valor que se escribe en el input
 function sesionIniciada(){
+    sesionOk = false
     for (let i = 0; i < usuarios.length; i++){
-        if(usuariohtml.value===usuarios[i].usuario && contrasenahtml.value===usuarios[i].contrasena){
+        if(usuarioHtml.value===usuarios[i].usuario && contrasenaHtml.value===usuarios[i].contrasena){
             sesionOk = true
-            iconoSesion.innerHTML = "🟢 Sesion iniciada"
-            usuariohtml.value = ""
-            contrasenahtml.value = ""
-            confirmacionInicio.innerHTML = "" 
+            iconoSesion.textContent = "🟢 Sesion iniciada"
+            usuarioHtml.value = ""
+            contrasenaHtml.value = ""
+            confirmacionInicio.textContent = "" 
             usuarioActual = usuarios[i].usuario
+            break
         }
     }
     if(!sesionOk){// e igual a sesionOk == false
@@ -96,31 +94,42 @@ function sesionIniciada(){
 function sesionCerrada(){
     if(sesionOk){ // sesionOK == true es lo mismo que sesionOK
         sesionOk = false
-        console.log("sesion cerrada")
-        iconoSesion.innerHTML = "🔴 Sesion no iniciada"
+        usuarioActual = ""
+        iconoSesion.textContent = "🔴 Sesion no iniciada"
     }
 }
 
 
 function agregarRuta(){
     if(sesionOk && ruta.value && hora.value && experiencia.value){
-        rutas.push({usuario: usuarioActual, ruta: ruta.value, hora: Number(hora.value), experiencia: experiencia.value})
+        rutas.push({
+            usuario: usuarioActual,
+            ruta: ruta.value,
+            hora: Number(hora.value),
+            experiencia: experiencia.value
+        })
         ruta.value = ""
         hora.value = ""
         experiencia.value = ""
         articulo.innerHTML = ""
 
         for(let i = 0; i < rutas.length; i++){
-            let article = document.createElement('article')
-            article.innerHTML = `<p>Usuario👤 : ${rutas[i].usuario} </p> <p> Ruta🏔️ : ${rutas[i].ruta} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Horas⏱️ : ${rutas[i].hora}</p> <p>Experiencia📝 : ${rutas[i].experiencia}</p>`
+            const article = document.createElement('article')
+            article.innerHTML = `
+            <p>Usuario👤 : ${rutas[i].usuario} </p>
+            <p>
+                Ruta🏔️ : ${rutas[i].ruta}
+                Horas⏱️ : ${rutas[i].hora}
+            </p>
+            <p>Experiencia📝 : ${rutas[i].experiencia}</p>`
             articulo.appendChild(article)
         }
     }
-    else if(sesionOk && (!ruta.value || !hora.value || !experiencia.value)){
-        confirmacionInicio.innerHTML = "Rellena todos los campos"
+    else if(sesionOk){
+        confirmacionInicio.textContent = "Rellena todos los campos"
     }
     else{
-        confirmacionInicio.innerHTML = "Inicie sesion antes de agregar rutas"
+        confirmacionInicio.textContent = "Inicie sesion antes de agregar rutas"
     }   
 }
 

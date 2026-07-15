@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +14,7 @@
 
     <!--llamado a archivo css-->
     <link href="style.css" rel="stylesheet">
-    
-    <!-- fin del llamado y js-->
+    <!-- fin del llamado y css-->
 </head>
 
 <!--inicio del cuerpo de la pagina-->
@@ -53,52 +52,51 @@
             <h2>🏔️ Comparte tu experiencia en la montaña</h2>
             
             <div class="usuarios">
-            <form class="inicio-sesion">
-                <p>Inicia sesion:</p>
-                <div>
-                    <label for="usuario">Usuario: </label>
-                    <input 
-                        id="usuario" 
-                        type="text"
-                    >
-                </div>
-
-                <div>
-                <label for="contrasena">Contraseña: </label>
-                    <input 
-                        id="contrasena" 
-                        type="password"
+                <form class="inicio-sesion">
+                    <p>Inicia sesion:</p>
+                    <div>
+                        <label for="usuario">Usuario: </label>
+                        <input 
+                            id="usuario" 
+                            type="text"
                         >
-                </div>
+                    </div>
 
-                <button id="boton-inicio-sesion" class="boton-de-inicio" type="button">Iniciar Sesion</button>
-                <button id="boton-cierre-sesion" class="boton-de-cierre" type="button">Cerrar sesion</button>
-                <p id="icono_de_sesion">🔴 Sesion no iniciada</p>
-            </form>
-            
-            
-            
-            <form class="registrar-usuario">
-                <p>Registrar nuevo usuario</p>
-                <div>
-                    <label>Nuevo usuario: </label>
-                    <input
-                        id="nuevo-usuario"
-                        type="text"
-                    >
+                    <div>
+                    <label for="contrasena">Contraseña: </label>
+                        <input 
+                            id="contrasena" 
+                            type="password"
+                            >
+                    </div>
 
-                </div>
+                    <button id="boton-inicio-sesion" class="boton-de-inicio" type="button">Iniciar Sesion</button>
+                    <button id="boton-cierre-sesion" class="boton-de-cierre" type="button">Cerrar sesion</button>
+                    <p id="icono_de_sesion">🔴 Sesion no iniciada</p>
+                </form>
+            
+                <form class="registrar-usuario">
+                    <p>Registrar nuevo usuario</p>
 
-                <div>
-                    <label>Nueva contraseña: </label>
-                    <input
-                        id="nueva-contraseña"
-                        type="password"
-                    >
-                </div>
-                <button id="boton-de-registro" class="boton-de-registro" type="button">Registrar</button>
-                <p id="icono_usuario_registrado"></p>
-            </form>
+                    <div>
+                        <label for="nuevo-usuario">Nuevo usuario: </label>
+                        <input
+                            id="nuevo-usuario"
+                            type="text"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="nueva-contraseña">Nueva contraseña: </label>
+                        <input
+                            id="nueva-contraseña"
+                            type="password"
+                        >
+                    </div>
+
+                    <button id="boton-de-registro" class="boton-de-registro" type="button">Registrar</button>
+                    <p id="icono_usuario_registrado"></p>
+                </form>
             </div>
             
             <form class="comparte-tu-ruta">
@@ -109,33 +107,43 @@
                         type="text" 
                         placeholder="Ingresa el nombre de la ruta"
                     >
+                </div>
+
+                <div>
                     <label for="la-hora">Comparte el tiempo de recorrido total:</label>
                     <input
                         id="la-hora"
                         type="number"
-                        placeholder="Timepo de recorrido"
+                        placeholder="Tiempo de recorrido"
                     >
-                    <label for="experiencia" class="experiencia"><p>Comparte tus experiencias y consejos:</p></label>
+                </div>
+
+                <div>
+                    <label for="experiencia" class="experiencia">Comparte tus experiencias y consejos: </label>
                     <textarea 
                         id="experiencia"
                         rows="7"
                         cols="50"
-                        placeholder="Comparte tu experiencia con otros senderistas"></textarea>
-                    <button id="boton-ruta" type="button">Compartir 😆</button>
+                        placeholder="Comparte tu experiencia con otros senderistas"
+                    ></textarea>
                 </div>
+
+                <button id="boton-ruta" type="button">Compartir😆
+                    <button>
 
                 <p id="inicie-sesion"></p>
             
             </form>           
         </section>
-
-
-
-        <h2>Experiencias y Consejos</h2>
-        <section id="lista-de-rutas" class="lista-de-rutas">
+  
+        <div class="caja-de-comentarios">
+            <h2>Experiencias y Consejos</h2>
+            <section 
+                id="lista-de-rutas" class="lista-de-rutas"
+            >
             
-        
-        </section>
+            </section>
+        </div>
 
     </main>
     <!--pie de pagina-->

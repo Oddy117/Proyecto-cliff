@@ -1,12 +1,16 @@
 /*inicio de body general*/
 /*----------------------*/
+*{
+    box-sizing:border-box;
+}
+
 body{
     background-color: #fbf2dc;
+    font-size: 22px;
 }
 body, p, ul{
     margin: 0;
     padding: 0;
-    box-sizing:border-box;
 }
 /*--------------------*/
 /*fin de body general*/
@@ -35,8 +39,8 @@ body, p, ul{
 h1{
     font-family: "Yuyu Short", sans-serif;
     font-size: 120px;
-    margin: 0px 0px 0px 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     position: relative;
     color: #FAEDCD;
     text-align: center;
@@ -49,8 +53,6 @@ h1{
     color: #E9E5D6;
     text-shadow: -3px -3px #1d1d1d;
     position: relative;
-    margin: 0 auto;
-    
 }
 
 .eslogan{
@@ -59,6 +61,7 @@ h1{
     margin: 0 auto;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     text-align: center;
     gap: 20px; /*espacio para los hijos de flex*/
     white-space: nowrap; /*sin renglones*/
@@ -67,11 +70,11 @@ h1{
 /*fin de header*/
 
 
-/*inicio secciones*/
+/*secciones*/
 /*--------------------*/
 section{
-    padding: 0px 0px 20px 0px;
-    margin: 0px 0px 20px 0px;/*dos valores (arriba abajo - izquierda derecha)*/
+    padding-bottom: 20px;
+    margin-bottom: 20px;/*dos valores (arriba abajo - izquierda derecha)*/
 }
 
 
@@ -80,7 +83,7 @@ section{
 .section-1 h2{
     background-color: #3F4A4F;
     color: #FAEDCD;
-    margin: 0px 0px 20px 0px; 
+    margin-bottom:20px; 
 }
 
 /*--------------------*/
@@ -99,7 +102,7 @@ section{
     text-decoration: none;
 }
 
-.li-encontraras, li{
+.li-encontraras li{
     list-style-type: none;
     white-space: nowrap;
     margin: 0 50px;
@@ -117,6 +120,8 @@ section{
 
 /*inicio section 3*/
 /*--------------------*/
+
+
 .section-3 h2{
     background-color: #8B5E34;
     color: #FAEDCD;
@@ -126,10 +131,17 @@ section{
 .usuarios{ /* flex acomoda los hijos directos del contenedor */
     display: flex; /*quiero controlar cómo acomodas a mis hijos directos*/
     flex-direction: row; /*en qué direccion debe acomodar a esos hijos*/
+    margin-left: 20px;
 }
 
-.inicio-sesion{
-    max-width: 300px;
+.comparte-tu-ruta,
+.caja-de-comentarios{
+    margin-left: 20px;
+}
+
+.inicio-sesion,
+.registrar-usuario{
+    max-width: 350px;
     width: 100%;
     border: solid;
     text-align: left;
@@ -137,12 +149,7 @@ section{
 }
 
 .registrar-usuario{
-    max-width: 300px;
-    width: 100%;
-    border: solid;
-    text-align: left;
     margin-left: 20px;
-    margin-bottom: 20PX;
 }
 
 .boton-de-registro{
@@ -172,6 +179,10 @@ section{
     background-color: #A47148;
 }
 
+.experiencia{
+    display: block; /*lo alinea como bloque*/
+}
+
 .lista-de-rutas{
     border: solid;
     max-width: 400px;
@@ -182,14 +193,13 @@ section{
 }
 
 article{
+    overflow-wrap: break-word; /*evita el desbordamiento de texto*/
     border: 2px dotted;
     border-radius: 8px;
     padding: 12px;
     margin-bottom: 15px;
     box-sizing: border-box;
     font-size: 20px;
-    resize: none;
-
 }
 /*--------------------*/
 /*fin de secction3*/
