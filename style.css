@@ -246,6 +246,10 @@ footer{
         flex-direction: column;
     }
 
+    .registrar-usuario{
+    margin-left: 20px 0;
+    }
+
     textarea{
         max-width: 90%;
     }
