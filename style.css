@@ -76,7 +76,7 @@ h1{
 /*--------------------*/
 section{
     padding-bottom: 20px;
-    margin-bottom: 20px;/*dos valores (arriba abajo - izquierda derecha)*/
+    margin-bottom: 20px;/*cunado haya dos valores (arriba abajo - izquierda derecha)*/
 }
 
 
@@ -247,7 +247,7 @@ footer{
     }
 
     .registrar-usuario{
-    margin: 20px 0;
+        margin-left: 0;
     }
 
     textarea{
