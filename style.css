@@ -239,6 +239,7 @@ footer{
 
     .li-encontraras li{
         white-space: normal;
+        margin: 0;
     }
 
     .usuarios{
