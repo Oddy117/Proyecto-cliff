@@ -72,21 +72,43 @@ function registrarUsuario(){
 }
 
 //Nota temporal NO olvidar el .value que es = al valor que se escribe en el input
+function revisarSesion(){
+    if(localStorage.getItem("sesion") === "true"){
+        sesionOk = true
+        iconoSesion.textContent = "🟢 Sesion iniciada"
+        usuarioActual = localStorage.getItem("usuario")
+    }
+
+    else{
+        sesionOk = false
+        usuarioActual = ""
+        iconoSesion.textContent = "🔴 Sesion no iniciada"
+    }
+}
+
+revisarSesion()
+
+
+
 function sesionIniciada(){
     sesionOk = false
     for (let i = 0; i < usuarios.length; i++){
         if(usuarioHtml.value===usuarios[i].usuario && contrasenaHtml.value===usuarios[i].contrasena){
             sesionOk = true
+            localStorage.setItem("sesion", sesionOk)
+            localStorage.setItem("usuario", usuarioHtml.value)
             iconoSesion.textContent = "🟢 Sesion iniciada"
             usuarioHtml.value = ""
             contrasenaHtml.value = ""
             confirmacionInicio.textContent = "" 
             usuarioActual = usuarios[i].usuario
+            iconoUsuarioRegistrado.textContent = ""
+            
             break
         }
     }
     if(!sesionOk){// e igual a sesionOk == false
-        console.log("usuario o contraseña incorrectas")
+        confirmacionInicio.textContent = "usuario o contraseña incorrectas"
     }
 }
 
@@ -94,6 +116,8 @@ function sesionIniciada(){
 function sesionCerrada(){
     if(sesionOk){ // sesionOK == true es lo mismo que sesionOK
         sesionOk = false
+        localStorage.setItem("sesion", sesionOk)
+        localStorage.removeItem("usuario")
         usuarioActual = ""
         iconoSesion.textContent = "🔴 Sesion no iniciada"
     }
@@ -124,6 +148,7 @@ function agregarRuta(){
             <p>Experiencia📝 : ${rutas[i].experiencia}</p>`
             articulo.appendChild(article)
         }
+        confirmacionInicio.textContent = ""
     }
     else if(sesionOk){
         confirmacionInicio.textContent = "Rellena todos los campos"
@@ -132,5 +157,8 @@ function agregarRuta(){
         confirmacionInicio.textContent = "Inicie sesion antes de agregar rutas"
     }   
 }
+
+
+
 
 
