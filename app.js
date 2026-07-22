@@ -44,6 +44,64 @@ botonCierre.addEventListener("click",sesionCerrada)
 botonRegistro.addEventListener("click",registrarUsuario)
 
 
+//----------------------------------------------------------
+//----------------------------------------------------------
+function revisarSesion(){
+    if(localStorage.getItem("sesion") === "true"){
+        sesionOk = true
+        iconoSesion.textContent = "🟢 Sesion iniciada"
+        usuarioActual = localStorage.getItem("usuario")
+    }
+
+    else{
+        sesionOk = false
+        usuarioActual = ""
+        iconoSesion.textContent = "🔴 Sesion no iniciada"
+    }
+
+    let usuariosGuardados = localStorage.getItem("usuarios")
+
+    if(usuariosGuardados){
+        usuariosGuardados = JSON.parse(usuariosGuardados)
+        for(let i = 0; i < usuariosGuardados.length; i++){
+            let usuariosYaGuardados = false
+            for(let j = 0; j < usuarios.length; j++){
+                if(usuariosGuardados[i].usuario === usuarios[j].usuario){
+                    usuariosYaGuardados = true
+                    break
+                }
+            }    
+        if(!usuariosYaGuardados){
+            usuarios.push(usuariosGuardados[i])
+        }
+        }
+    }
+}
+
+function comentariosGuardados(){
+    let comentariosGuardados = localStorage.getItem("rutas")
+    if (comentariosGuardados){
+        comentariosGuardados = JSON.parse(comentariosGuardados)
+        for(let i = 0; i < comentariosGuardados.length; i++){
+            rutas.push(comentariosGuardados[i])
+            const article = document.createElement('article')
+            article.innerHTML = `
+            <p>Usuario👤 : ${rutas[i].usuario} </p>
+            <p>Ruta🏔️ : ${rutas[i].ruta}</p>
+            <p>Horas⏱️ : ${rutas[i].hora}hrs</p>
+            <p>Experiencia📝 : ${rutas[i].experiencia}</p>`
+            articulo.appendChild(article)
+        }
+    }
+
+}
+
+revisarSesion()
+comentariosGuardados()
+//----------------------------------------------------------
+//----------------------------------------------------------
+
+
 function registrarUsuario(){
     let permiso = true
     for(let i = 0; i < usuarios.length; i++){
@@ -55,8 +113,9 @@ function registrarUsuario(){
     if(permiso && nuevoUsuario.value && nuevaContraseña.value){
         usuarios.push({
             usuario: nuevoUsuario.value,
-            contrasena: nuevaContraseña.value
+            contrasena: nuevaContraseña.value  
         })
+        localStorage.setItem("usuarios", JSON.stringify(usuarios))
         nuevoUsuario.value = ""
         nuevaContraseña.value = ""
         iconoUsuarioRegistrado.textContent = "🟢 Usuario registrado con exito"
@@ -71,24 +130,9 @@ function registrarUsuario(){
     }    
 }
 
+//----------------------------------------------------------
+//----------------------------------------------------------
 //Nota temporal NO olvidar el .value que es = al valor que se escribe en el input
-function revisarSesion(){
-    if(localStorage.getItem("sesion") === "true"){
-        sesionOk = true
-        iconoSesion.textContent = "🟢 Sesion iniciada"
-        usuarioActual = localStorage.getItem("usuario")
-    }
-
-    else{
-        sesionOk = false
-        usuarioActual = ""
-        iconoSesion.textContent = "🔴 Sesion no iniciada"
-    }
-}
-
-revisarSesion()
-
-
 
 function sesionIniciada(){
     sesionOk = false
@@ -124,6 +168,10 @@ function sesionCerrada(){
 }
 
 
+//----------------------------------------------------------
+//----------------------------------------------------------
+
+
 function agregarRuta(){
     if(sesionOk && ruta.value && hora.value && experiencia.value){
         rutas.push({
@@ -132,6 +180,7 @@ function agregarRuta(){
             hora: Number(hora.value),
             experiencia: experiencia.value
         })
+        localStorage.setItem("rutas", JSON.stringify(rutas))
         ruta.value = ""
         hora.value = ""
         experiencia.value = ""
@@ -141,10 +190,8 @@ function agregarRuta(){
             const article = document.createElement('article')
             article.innerHTML = `
             <p>Usuario👤 : ${rutas[i].usuario} </p>
-            <p>
-                Ruta🏔️ : ${rutas[i].ruta}
-                Horas⏱️ : ${rutas[i].hora}
-            </p>
+            <p>Ruta🏔️ : ${rutas[i].ruta}</p>
+            <p>Horas⏱️ : ${rutas[i].hora}hrs</p>
             <p>Experiencia📝 : ${rutas[i].experiencia}</p>`
             articulo.appendChild(article)
         }

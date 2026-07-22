@@ -1,5 +1,8 @@
 /*inicio de body general*/
 /*----------------------*/
+html{
+    height: 100%;
+}
 *{
     box-sizing:border-box;
 }
@@ -7,11 +10,22 @@
 body{
     background-color: #fbf2dc;
     font-size: 22px;
-    /*overflow-x: hidden;*/
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
+
+main{
+    flex-grow: 1;
+}
+
 body, p, ul{
     margin: 0;
     padding: 0;
+}
+
+button{
+    border-radius: 10px;
 }
 /*--------------------*/
 /*fin de body general*/
@@ -21,6 +35,7 @@ body, p, ul{
 /*--------------------*/
 .fondo-header {
     background-image: url(Imagenes/portada.jpg);
+    height: 500px;
     background-size: cover;
     background-position: 75% 70%; /*o center para posicionar al centro*/
     padding: 0px;
@@ -39,7 +54,7 @@ body, p, ul{
 
 h1{
     font-family: "Yuyu Short", sans-serif;
-    font-size: 120px;
+    font-size: 160px;
     margin: 0;
     padding: 0;
     position: relative;
@@ -84,6 +99,7 @@ section{
 .section-1 h2{
     background-color: #3F4A4F;
     color: #FAEDCD;
+    margin-top: 0;
 }
 
 /*--------------------*/
@@ -100,8 +116,8 @@ section{
 
 .li-encontraras a{
     text-decoration: none;
-    color: #FAEDCD;
-    font-size: 30px;
+    color: #c2b596;
+    font-size: 22px;
     font-weight: bold;
     text-shadow: -2px -2px #1d1d1d;
     width: 100%;
@@ -109,11 +125,11 @@ section{
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 8px;
 }
 
 .li-encontraras li{
     list-style-type: none;
-    white-space: nowrap;
     margin: 0;
     background-size: cover; /*muestra toda la imagen*/
     width: 100%;
@@ -129,8 +145,16 @@ section{
     margin-left: -120px;
 }
 
+.li-encontraras span{
+    display: block;
+    width: 140px;
+    text-align: center;
+    white-space: normal;
+}
+
 .LiSenderismo{
     background-image: url(Imagenes/senderismo.jpg);
+    background-position: 30% 0%;
     clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
 }
 
@@ -141,11 +165,13 @@ section{
 
 .LiAltaMontana{
     background-image: url(Imagenes/altamontana.jpeg); 
+    background-position: 75% 0%;
     clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
 
 .LiFotografiaDeMontana{
     background-image: url(Imagenes/fotomontana.jpg);
+    background-position: 40% 0%;
     clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
 
@@ -177,6 +203,7 @@ section{
 .comparte-tu-ruta,
 .caja-de-comentarios{
     margin-left: 20px;
+    margin-bottom: 20px;
 }
 
 .inicio-sesion,
@@ -256,12 +283,25 @@ article{
 /*inicio footer*/
 /*--------------------*/
 footer{
-    border-top: dotted;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    height: 80px;
+    font-size: 15px;
+    padding-left: 5px;
+}
+
+.foot1{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
 }
 /*--------------------*/
 /*fin de footer*/
 
-@media (max-width: 600px){ /*el media va hasta abajo por la cascada*/
+@media (max-width: 900px){ /*el media va hasta abajo por la cascada*/
 
     .eslogan{
         flex-direction: column;
@@ -280,6 +320,10 @@ footer{
         margin: 0;
     }
 
+    .li-encontraras a{
+        font-size: 22px;
+    }
+
     .usuarios{
         flex-direction: column;
     }
@@ -293,3 +337,9 @@ footer{
     }
 
 } 
+
+@media (max-width: 650px){
+    .li-encontraras a{
+        font-size: 16px;
+    }
+}
