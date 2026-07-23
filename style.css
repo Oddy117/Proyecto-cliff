@@ -1,5 +1,9 @@
 /*inicio de body general*/
 /*----------------------*/
+section{
+    margin: 150px 0 100px 0;
+}
+
 html{
     height: 100%;
 }
@@ -26,6 +30,7 @@ body, p, ul{
 
 button{
     border-radius: 10px;
+    width: 100px;
 }
 /*--------------------*/
 /*fin de body general*/
@@ -35,7 +40,7 @@ button{
 /*--------------------*/
 .fondo-header {
     background-image: url(Imagenes/portada.jpg);
-    height: 500px;
+    height: 540px;
     background-size: cover;
     background-position: 75% 70%; /*o center para posicionar al centro*/
     padding: 0px;
@@ -54,7 +59,7 @@ button{
 
 h1{
     font-family: "Yuyu Short", sans-serif;
-    font-size: 160px;
+    font-size: 180px;
     margin: 0;
     padding: 0;
     position: relative;
@@ -100,6 +105,16 @@ section{
     background-color: #3F4A4F;
     color: #FAEDCD;
     margin-top: 0;
+    text-align: center;
+    padding: 32px 0;
+    border: solid;
+    border-radius: 80px;
+    width: 700px;
+    margin: 50px auto;
+}
+
+.section-1 p{
+    text-align: center;
 }
 
 /*--------------------*/
@@ -109,9 +124,15 @@ section{
 /*inicio section 2*/
 /*--------------------*/
 .section-2 h2{
+    text-align: center;
     background-color: #3A5A40;
     color: #FAEDCD;
     margin-bottom: 0px;
+    padding: 32px 0;
+    border: solid;
+    border-radius: 80px;
+    width: 700px;
+    margin: 50px auto;
 }
 
 .li-encontraras a{
@@ -187,36 +208,64 @@ section{
 /*--------------------*/
 
 
-.section-3 h2{
+.titulo1{
     background-color: #8B5E34;
     color: #FAEDCD;
     margin-bottom: 30px;
     margin-top: 0;
+    text-align: center;
+    padding: 32px 0;
+    border: solid;
+    border-radius: 80px;
+    width: 700px;
+    margin: 50px auto;
+}
+
+.titulo2{
+    background-color: #1F4E5F;
+    color: #FAEDCD;
+    margin-bottom: 5px;
+    margin-top: 0;
+    text-align: center;
+    padding: 32px 0;
+    border: solid;
+    border-radius: 80px;
+    width: 700px;
+    margin: 50px auto;
 }
 
 .usuarios{ /* flex acomoda los hijos directos del contenedor */
     display: flex; /*quiero controlar cómo acomodas a mis hijos directos*/
     flex-direction: row; /*en qué direccion debe acomodar a esos hijos*/
-    margin-left: 20px;
+    justify-content: center;
+    gap: 100px;
 }
 
-.comparte-tu-ruta,
-.caja-de-comentarios{
-    margin-left: 20px;
-    margin-bottom: 20px;
+.usuarios h3{
+    text-align: center;
+    margin: 0;
 }
 
 .inicio-sesion,
 .registrar-usuario{
-    max-width: 350px;
-    width: 100%;
+    padding: 0 10px;
+    width: 250px;
+    height: 300px;
     border: solid;
-    text-align: left;
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    gap: 15px;
 }
 
-.registrar-usuario{
-    margin-left: 20px;
+.inicio-sesion input, .registrar-usuario input{
+    width: 225px;
+}
+
+.inicio-sesion div, .registrar-usuario div{
+    display: flex;
+    flex-direction: column;
 }
 
 .boton-de-registro{
@@ -246,22 +295,60 @@ section{
     background-color: #A47148;
 }
 
-.experiencia{
-    display: block; /*lo alinea como bloque*/
+.comparte-tu-ruta > *{
+    margin-left: 10px;
+}
+
+.caja-de-comentarios h3{
+    margin: 5px 0 0 20px
+}
+
+.caja-de-comentarios > *{
+    margin-left: 20px;
+}
+
+.comparte-tu-ruta,
+.caja-de-comentarios{
+    margin-bottom: 20px;
+    border: solid;
+    border-radius: 10px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contenido-rutas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comparte-tu-ruta div,
+.caja-de-comentarios div{
+    display: flex;
+    flex-direction: column;
+}
+
+.comparte-tu-ruta input,
+.caja-de-comentarios input{
+    width: 350px;
+}
+
+textarea{
+    width: 450px;
 }
 
 .lista-de-rutas{
     border: solid;
-    max-width: 400px;
-    width: 100%;
-    margin-top: 0;
+    width: 550px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
 }
 
 article{
+    border: solid;
     overflow-wrap: break-word; /*evita el desbordamiento de texto*/
-    border: 2px dotted;
     border-radius: 8px;
     padding: 12px;
     margin-bottom: 15px;

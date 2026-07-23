@@ -50,11 +50,11 @@
         </section>
         
         <section class="section-3">
-            <h2>🏔️ Comparte tu experiencia en la montaña</h2>
+            <h2 class="titulo1">👤 Inicia sesion y comparte tus experiencias</h2>
             
             <div class="usuarios">
                 <form class="inicio-sesion">
-                    <p>Inicia sesion:</p>
+                    <h3>Iniciar sesion:</h3>
                     <div>
                         <label for="usuario">Usuario: </label>
                         <input 
@@ -77,7 +77,7 @@
                 </form>
             
                 <form class="registrar-usuario">
-                    <p>Registrar nuevo usuario</p>
+                    <h3>Registrar nuevo usuario:</h3>
 
                     <div>
                         <label for="nuevo-usuario">Nuevo usuario: </label>
@@ -99,52 +99,52 @@
                     <p id="icono_usuario_registrado"></p>
                 </form>
             </div>
-            
-            <form class="comparte-tu-ruta">
-                <div>
-                    <label for="nombre-de-la-ruta">Comparte tu ruta:</label>
-                    <input 
-                        id="nombre-de-la-ruta" 
-                        type="text" 
-                        placeholder="Ingresa el nombre de la ruta"
+            <h2 class="titulo2">🏔️ Comparte experiencias</h2>
+            <div class="contenido-rutas">
+                <form class="comparte-tu-ruta">
+                    <div>
+                        <label for="nombre-de-la-ruta">Comparte tu ruta:</label>
+                        <input 
+                            id="nombre-de-la-ruta" 
+                            type="text" 
+                            placeholder="Ingresa el nombre de la ruta"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="la-hora">Comparte el tiempo de recorrido total:</label>
+                        <input
+                            id="la-hora"
+                            type="number"
+                            placeholder="Tiempo de recorrido"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="experiencia" class="experiencia">Comparte tus experiencias y consejos: </label>
+                        <textarea 
+                            id="experiencia"
+                            rows="7"
+                            cols="50"
+                            placeholder="Comparte tu experiencia con otros senderistas"
+                        ></textarea>
+                    </div>
+
+                    <button id="boton-ruta" type="button">Compartir😆 </button>
+
+                    <p id="inicie-sesion"></p>
+                </form> 
+  
+                <div class="caja-de-comentarios">
+                    <h3>Experiencias y Consejos:</h3>
+                    <section 
+                        id="lista-de-rutas" class="lista-de-rutas"
                     >
+                    </section>
                 </div>
-
-                <div>
-                    <label for="la-hora">Comparte el tiempo de recorrido total:</label>
-                    <input
-                        id="la-hora"
-                        type="number"
-                        placeholder="Tiempo de recorrido"
-                    >
-                </div>
-
-                <div>
-                    <label for="experiencia" class="experiencia">Comparte tus experiencias y consejos: </label>
-                    <textarea 
-                        id="experiencia"
-                        rows="7"
-                        cols="50"
-                        placeholder="Comparte tu experiencia con otros senderistas"
-                    ></textarea>
-                </div>
-
-                <button id="boton-ruta" type="button">Compartir😆 </button>
-
-                <p id="inicie-sesion"></p>
-            </form>         
+            </div>       
               
         </section>
-  
-        <div class="caja-de-comentarios">
-            <h2>Experiencias y Consejos</h2>
-            <section 
-                id="lista-de-rutas" class="lista-de-rutas"
-            >
-            
-            </section>
-        </div>
-
     </main>
     <!--pie de pagina-->
     <footer>
